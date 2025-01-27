@@ -2,7 +2,7 @@ package miyucomics.sparkle;
 
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.particle.SimpleParticleType;
 
 public class SparkleParticle extends SpriteBillboardParticle {
 	private final SpriteProvider spriteProvider;
@@ -36,9 +36,9 @@ public class SparkleParticle extends SpriteBillboardParticle {
 		return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
 	}
 
-	public record Factory(SpriteProvider spriteProvider) implements ParticleFactory<DefaultParticleType> {
+	public record Factory(SpriteProvider spriteProvider) implements ParticleFactory<SimpleParticleType> {
 		@Override
-		public Particle createParticle(DefaultParticleType defaultParticleType, ClientWorld world, double d, double e, double f, double g, double h, double i) {
+		public Particle createParticle(SimpleParticleType defaultParticleType, ClientWorld world, double d, double e, double f, double g, double h, double i) {
 			SparkleParticle sparkleParticle = new SparkleParticle(world, d, e, f, g, h, i, this.spriteProvider);
 			sparkleParticle.setAlpha(1.0f);
 			return sparkleParticle;
