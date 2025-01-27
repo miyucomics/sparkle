@@ -2,35 +2,30 @@
 	"schemaVersion": 1,
 	"id": "sparkle",
 	"version": "${version}",
-
 	"name": "Sparkle",
-	"description": "Makes sparkly blocks emit glow-in-the-dark sparkling particles!",
+	"description": "A simple mod that adds sparkling particles to shiny items, blocks, and armor.",
 	"authors": [
-		"BrianComics#8994"
+		"miyucomics"
 	],
 	"contact": {
-		"homepage": "",
-		"sources": ""
+		"homepage": "https://github.com/miyucomics/sparkle",
+		"sources": "https://github.com/miyucomics/sparkle"
 	},
-
 	"license": "MIT",
 	"icon": "assets/sparkle/icon.png",
-
 	"environment": "*",
 	"entrypoints": {
-		"main": [
-			"briancomics.sparkle.SparkleMain"
-		],
 		"client": [
-			"briancomics.sparkle.SparkleClient"
+			"miyucomics.sparkle.Sparkle"
 		]
 	},
 	"mixins": [
 		"sparkle.mixins.json"
 	],
-
 	"depends": {
-		"fabric": "*",
-		"minecraft": ">=1.20"
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.19",
+		"java": ">=17",
+		"fabric": "*"
 	}
 }
