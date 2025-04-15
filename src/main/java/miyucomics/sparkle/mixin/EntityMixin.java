@@ -1,6 +1,7 @@
 package miyucomics.sparkle.mixin;
 
 import miyucomics.sparkle.Sparkle;
+import miyucomics.sparkle.SparkleConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
@@ -23,7 +24,7 @@ public abstract class EntityMixin {
 	private void addParticles(CallbackInfo info) {
 		if (!getWorld().isClient())
 			return;
-		if (Sparkle.SPARKLY_ENTITIES.contains(((Entity) (Object) this).getType()) && random.nextFloat() < 0.1F) {
+		if (SparkleConfig.SPARKLY_ENTITIES.contains(((Entity) (Object) this).getType()) && random.nextFloat() < 0.1F) {
 			double positionX = (getX() - 0.5D) + random.nextDouble();
 			double positionY = (getY() - 0.5D) + random.nextDouble();
 			double positionZ = (getZ() - 0.5D) + random.nextDouble();

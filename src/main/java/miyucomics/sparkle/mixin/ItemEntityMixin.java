@@ -1,6 +1,7 @@
 package miyucomics.sparkle.mixin;
 
 import miyucomics.sparkle.Sparkle;
+import miyucomics.sparkle.SparkleConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -24,7 +25,7 @@ public abstract class ItemEntityMixin extends Entity {
 	private void addParticles(CallbackInfo info) {
 		if (!getWorld().isClient())
 			return;
-		if (Sparkle.SPARKLY_ITEMS.contains(getStack().getItem()) && random.nextFloat() < 0.1F) {
+		if (SparkleConfig.SPARKLY_ITEMS.contains(getStack().getItem()) && random.nextFloat() < 0.1F) {
 			double positionX = (getX() - 0.5D) + random.nextDouble();
 			double positionY = (getY() - 0.5D) + random.nextDouble();
 			double positionZ = (getZ() - 0.5D) + random.nextDouble();
