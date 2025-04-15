@@ -1,6 +1,7 @@
 package miyucomics.sparkle.mixin;
 
 import miyucomics.sparkle.Sparkle;
+import miyucomics.sparkle.SparkleConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +19,7 @@ public class BlockMixin {
 	private void addParticles(BlockState state, World world, BlockPos pos, Random random, CallbackInfo ci) {
 		if (!world.isClient())
 			return;
-		if (random.nextFloat() < 0.2 && Sparkle.SPARKLY_BLOCKS.contains(state.getBlock())) {
+		if (random.nextFloat() < 0.2 && SparkleConfig.SPARKLY_BLOCKS.contains(state.getBlock())) {
 			Direction direction = Direction.random(random);
 			Direction.Axis axis = direction.getAxis();
 			double x = axis == Direction.Axis.X ? 0.5 + 0.5625 * (double) direction.getOffsetX() : (double) random.nextFloat();

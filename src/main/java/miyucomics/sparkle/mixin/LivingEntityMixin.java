@@ -1,6 +1,7 @@
 package miyucomics.sparkle.mixin;
 
 import miyucomics.sparkle.Sparkle;
+import miyucomics.sparkle.SparkleConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -47,7 +48,7 @@ public abstract class LivingEntityMixin extends Entity {
 	private static int getShineValue(LivingEntity entity) {
 		int shineValue = 0;
 		for (ItemStack stack : entity.getArmorItems())
-			if (Sparkle.SPARKLY_ITEMS.contains(stack.getItem()))
+			if (SparkleConfig.SPARKLY_ITEMS.contains(stack.getItem()))
 				shineValue++;
 		return shineValue;
 	}

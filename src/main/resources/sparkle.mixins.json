@@ -2,7 +2,7 @@
 	"required": true,
 	"package": "miyucomics.sparkle.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"mixins": [
+	"client": [
 		"BlockMixin",
 		"EntityMixin",
 		"ItemEntityMixin",
