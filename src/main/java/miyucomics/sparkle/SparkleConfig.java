@@ -34,7 +34,8 @@ public class SparkleConfig extends Config {
 		Identifier.ofVanilla("light_weighted_pressure_plate"),
 		Identifier.ofVanilla("medium_amethyst_bud"),
 		Identifier.ofVanilla("raw_gold_block"),
-		Identifier.ofVanilla("small_amethyst_bud")
+		Identifier.ofVanilla("small_amethyst_bud"),
+		Identifier.ofVanilla("firefly_bush")
 	), ValidatedIdentifier.ofRegistry(Identifier.ofVanilla("diamond_block"), Registries.BLOCK));
 
 	@ClientModifiable
@@ -89,7 +90,8 @@ public class SparkleConfig extends Config {
 		Identifier.ofVanilla("raw_gold"),
 		Identifier.ofVanilla("raw_gold_block"),
 		Identifier.ofVanilla("small_amethyst_bud"),
-		Identifier.ofVanilla("spectral_arrow")
+		Identifier.ofVanilla("spectral_arrow"),
+		Identifier.ofVanilla("firefly_bush")
 	), ValidatedIdentifier.ofRegistry(Identifier.ofVanilla("diamond"), Registries.ITEM));
 
 	@ClientModifiable

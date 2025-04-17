@@ -5,6 +5,7 @@ import miyucomics.sparkle.SparkleConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -13,6 +14,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.List;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
@@ -39,7 +42,7 @@ public abstract class LivingEntityMixin extends Entity {
 				double x = random.nextFloat() * 2 - 1;
 				double y = random.nextFloat();
 				double z = random.nextFloat() * 2 - 1;
-				getWorld().addParticle(Sparkle.SPARKLE_PARTICLE, this.getX() + x, this.getY() + y + 1, this.getZ() + z, 0, 0, 0);
+				getWorld().addParticleClient(Sparkle.SPARKLE_PARTICLE, this.getX() + x, this.getY() + y + 1, this.getZ() + z, 0, 0, 0);
 			}
 		}
 	}
@@ -47,8 +50,8 @@ public abstract class LivingEntityMixin extends Entity {
 	@Unique
 	private static int getShineValue(LivingEntity entity) {
 		int shineValue = 0;
-		for (ItemStack stack : entity.getArmorItems())
-			if (SparkleConfig.SPARKLY_ITEMS.contains(stack.getItem()))
+		for (EquipmentSlot slot : List.of(EquipmentSlot.HEAD, EquipmentSlot.BODY, EquipmentSlot.LEGS, EquipmentSlot.FEET, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND))
+			if (SparkleConfig.SPARKLY_ITEMS.contains(entity.getEquippedStack(slot).getItem()))
 				shineValue++;
 		return shineValue;
 	}
