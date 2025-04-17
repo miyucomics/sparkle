@@ -29,7 +29,7 @@ public abstract class ItemEntityMixin extends Entity {
 			double positionX = (getX() - 0.5D) + random.nextDouble();
 			double positionY = (getY() - 0.5D) + random.nextDouble();
 			double positionZ = (getZ() - 0.5D) + random.nextDouble();
-			getWorld().addParticle(Sparkle.SPARKLE_PARTICLE, positionX, positionY, positionZ, 0, 0, 0);
+			getWorld().addParticleClient(Sparkle.SPARKLE_PARTICLE, positionX, positionY, positionZ, 0, 0, 0);
 		}
 	}
 }
