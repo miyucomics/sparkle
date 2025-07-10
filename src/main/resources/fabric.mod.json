@@ -22,11 +22,16 @@
 	"mixins": [
 		"sparkle.mixins.json"
 	],
+	"custom": {
+		"fzzy_config": [
+			"sparkle"
+		]
+	},
 	"depends": {
 		"fabricloader": ">=0.16.10",
-		"minecraft": ">=1.21.5",
-		"java": ">=21",
+		"minecraft": ">=1.20.1",
+		"java": ">=17",
 		"fabric-api": "*",
-		"fzzy_config": ">=0.6.9+1.21.5"
+		"fzzy_config": ">=0.7.0+1.20.1"
 	}
 }
