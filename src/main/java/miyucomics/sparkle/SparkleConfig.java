@@ -1,8 +1,6 @@
 package miyucomics.sparkle;
 
 import me.fzzyhmstrs.fzzy_config.annotations.ClientModifiable;
-import me.fzzyhmstrs.fzzy_config.api.ConfigApiJava;
-import me.fzzyhmstrs.fzzy_config.api.RegisterType;
 import me.fzzyhmstrs.fzzy_config.config.Config;
 import me.fzzyhmstrs.fzzy_config.validation.collection.ValidatedList;
 import me.fzzyhmstrs.fzzy_config.validation.minecraft.ValidatedIdentifier;
@@ -15,113 +13,109 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 
 public class SparkleConfig extends Config {
-	public static SparkleConfig config = ConfigApiJava.registerAndLoadConfig(SparkleConfig::new, RegisterType.CLIENT);
+	public SparkleConfig() {
+		super(new Identifier("sparkle", "config"));
+	}
 
 	@ClientModifiable
 	public ValidatedList<Identifier> sparklyBlocks = new ValidatedList<>(List.of(
-		Identifier.ofVanilla("amethyst_block"),
-		Identifier.ofVanilla("amethyst_cluster"),
-		Identifier.ofVanilla("beacon"),
-		Identifier.ofVanilla("budding_amethyst"),
-		Identifier.ofVanilla("calibrated_sculk_sensor"),
-		Identifier.ofVanilla("diamond_block"),
-		Identifier.ofVanilla("emerald_block"),
-		Identifier.ofVanilla("gilded_blackstone"),
-		Identifier.ofVanilla("glowstone"),
-		Identifier.ofVanilla("gold_block"),
-		Identifier.ofVanilla("lapis_block"),
-		Identifier.ofVanilla("large_amethyst_bud"),
-		Identifier.ofVanilla("light_weighted_pressure_plate"),
-		Identifier.ofVanilla("medium_amethyst_bud"),
-		Identifier.ofVanilla("raw_gold_block"),
-		Identifier.ofVanilla("small_amethyst_bud"),
-		Identifier.ofVanilla("firefly_bush")
-	), ValidatedIdentifier.ofRegistry(Identifier.ofVanilla("diamond_block"), Registries.BLOCK));
+		new Identifier("amethyst_block"),
+		new Identifier("amethyst_cluster"),
+		new Identifier("beacon"),
+		new Identifier("budding_amethyst"),
+		new Identifier("calibrated_sculk_sensor"),
+		new Identifier("diamond_block"),
+		new Identifier("emerald_block"),
+		new Identifier("gilded_blackstone"),
+		new Identifier("glowstone"),
+		new Identifier("gold_block"),
+		new Identifier("lapis_block"),
+		new Identifier("large_amethyst_bud"),
+		new Identifier("light_weighted_pressure_plate"),
+		new Identifier("medium_amethyst_bud"),
+		new Identifier("raw_gold_block"),
+		new Identifier("small_amethyst_bud")
+	), ValidatedIdentifier.ofRegistry(new Identifier("diamond_block"), Registries.BLOCK));
 
 	@ClientModifiable
 	public ValidatedList<Identifier> sparklyItems = new ValidatedList<>(List.of(
-		Identifier.ofVanilla("amethyst_block"),
-		Identifier.ofVanilla("amethyst_cluster"),
-		Identifier.ofVanilla("amethyst_shard"),
-		Identifier.ofVanilla("beacon"),
-		Identifier.ofVanilla("budding_amethyst"),
-		Identifier.ofVanilla("calibrated_sculk_sensor"),
-		Identifier.ofVanilla("diamond"),
-		Identifier.ofVanilla("diamond_axe"),
-		Identifier.ofVanilla("diamond_block"),
-		Identifier.ofVanilla("diamond_boots"),
-		Identifier.ofVanilla("diamond_chestplate"),
-		Identifier.ofVanilla("diamond_helmet"),
-		Identifier.ofVanilla("diamond_hoe"),
-		Identifier.ofVanilla("diamond_horse_armor"),
-		Identifier.ofVanilla("diamond_leggings"),
-		Identifier.ofVanilla("diamond_pickaxe"),
-		Identifier.ofVanilla("diamond_shovel"),
-		Identifier.ofVanilla("diamond_sword"),
-		Identifier.ofVanilla("emerald"),
-		Identifier.ofVanilla("emerald_block"),
-		Identifier.ofVanilla("enchanted_golden_apple"),
-		Identifier.ofVanilla("end_crystal"),
-		Identifier.ofVanilla("experience_bottle"),
-		Identifier.ofVanilla("gilded_blackstone"),
-		Identifier.ofVanilla("glistering_melon_slice"),
-		Identifier.ofVanilla("glow_ink_sac"),
-		Identifier.ofVanilla("glowstone_dust"),
-		Identifier.ofVanilla("gold_block"),
-		Identifier.ofVanilla("gold_ingot"),
-		Identifier.ofVanilla("gold_nugget"),
-		Identifier.ofVanilla("golden_apple"),
-		Identifier.ofVanilla("golden_axe"),
-		Identifier.ofVanilla("golden_boots"),
-		Identifier.ofVanilla("golden_carrot"),
-		Identifier.ofVanilla("golden_chestplate"),
-		Identifier.ofVanilla("golden_helmet"),
-		Identifier.ofVanilla("golden_hoe"),
-		Identifier.ofVanilla("golden_horse_armor"),
-		Identifier.ofVanilla("golden_leggings"),
-		Identifier.ofVanilla("golden_pickaxe"),
-		Identifier.ofVanilla("golden_shovel"),
-		Identifier.ofVanilla("golden_sword"),
-		Identifier.ofVanilla("lapis_lazuli"),
-		Identifier.ofVanilla("large_amethyst_bud"),
-		Identifier.ofVanilla("light_weighted_pressure_plate"),
-		Identifier.ofVanilla("medium_amethyst_bud"),
-		Identifier.ofVanilla("nether_star"),
-		Identifier.ofVanilla("raw_gold"),
-		Identifier.ofVanilla("raw_gold_block"),
-		Identifier.ofVanilla("small_amethyst_bud"),
-		Identifier.ofVanilla("spectral_arrow"),
-		Identifier.ofVanilla("firefly_bush")
-	), ValidatedIdentifier.ofRegistry(Identifier.ofVanilla("diamond"), Registries.ITEM));
+		new Identifier("amethyst_block"),
+		new Identifier("amethyst_cluster"),
+		new Identifier("amethyst_shard"),
+		new Identifier("beacon"),
+		new Identifier("budding_amethyst"),
+		new Identifier("calibrated_sculk_sensor"),
+		new Identifier("diamond"),
+		new Identifier("diamond_axe"),
+		new Identifier("diamond_block"),
+		new Identifier("diamond_boots"),
+		new Identifier("diamond_chestplate"),
+		new Identifier("diamond_helmet"),
+		new Identifier("diamond_hoe"),
+		new Identifier("diamond_horse_armor"),
+		new Identifier("diamond_leggings"),
+		new Identifier("diamond_pickaxe"),
+		new Identifier("diamond_shovel"),
+		new Identifier("diamond_sword"),
+		new Identifier("emerald"),
+		new Identifier("emerald_block"),
+		new Identifier("enchanted_golden_apple"),
+		new Identifier("end_crystal"),
+		new Identifier("experience_bottle"),
+		new Identifier("gilded_blackstone"),
+		new Identifier("glistering_melon_slice"),
+		new Identifier("glow_ink_sac"),
+		new Identifier("glowstone_dust"),
+		new Identifier("gold_block"),
+		new Identifier("gold_ingot"),
+		new Identifier("gold_nugget"),
+		new Identifier("golden_apple"),
+		new Identifier("golden_axe"),
+		new Identifier("golden_boots"),
+		new Identifier("golden_carrot"),
+		new Identifier("golden_chestplate"),
+		new Identifier("golden_helmet"),
+		new Identifier("golden_hoe"),
+		new Identifier("golden_horse_armor"),
+		new Identifier("golden_leggings"),
+		new Identifier("golden_pickaxe"),
+		new Identifier("golden_shovel"),
+		new Identifier("golden_sword"),
+		new Identifier("lapis_lazuli"),
+		new Identifier("large_amethyst_bud"),
+		new Identifier("light_weighted_pressure_plate"),
+		new Identifier("medium_amethyst_bud"),
+		new Identifier("nether_star"),
+		new Identifier("raw_gold"),
+		new Identifier("raw_gold_block"),
+		new Identifier("small_amethyst_bud"),
+		new Identifier("spectral_arrow")
+	), ValidatedIdentifier.ofRegistry(new Identifier("diamond"), Registries.ITEM));
 
 	@ClientModifiable
 	public ValidatedList<Identifier> sparklyEntities = new ValidatedList<>(List.of(
-		Identifier.ofVanilla("allay"),
-		Identifier.ofVanilla("end_crystal"),
-		Identifier.ofVanilla("experience_orb"),
-		Identifier.ofVanilla("glow_item_frame"),
-		Identifier.ofVanilla("glow_squid"),
-		Identifier.ofVanilla("spectral_arrow")
-	), ValidatedIdentifier.ofRegistry(Identifier.ofVanilla("allay"), Registries.ENTITY_TYPE));
+		new Identifier("allay"),
+		new Identifier("end_crystal"),
+		new Identifier("experience_orb"),
+		new Identifier("glow_item_frame"),
+		new Identifier("glow_squid"),
+		new Identifier("spectral_arrow")
+	), ValidatedIdentifier.ofRegistry(new Identifier("allay"), Registries.ENTITY_TYPE));
 
 	public static List<Block> SPARKLY_BLOCKS = List.of();
 	public static List<Item> SPARKLY_ITEMS = List.of();
 	public static List<? extends EntityType<?>> SPARKLY_ENTITIES = List.of();
 
-	public SparkleConfig() {
-		super(Identifier.of("sparkle", "config"));
-	}
-
-	public static void init() {
-		SPARKLY_BLOCKS = SparkleConfig.config.sparklyBlocks.stream().map(Registries.BLOCK::get).toList();
-		SPARKLY_ITEMS = SparkleConfig.config.sparklyItems.stream().map(Registries.ITEM::get).toList();
-		SPARKLY_ENTITIES = SparkleConfig.config.sparklyEntities.stream().map(Registries.ENTITY_TYPE::get).toList();
+	public void init() {
+		SPARKLY_BLOCKS = Sparkle.config.sparklyBlocks.stream().map(Registries.BLOCK::get).toList();
+		SPARKLY_ITEMS = Sparkle.config.sparklyItems.stream().map(Registries.ITEM::get).toList();
+		SPARKLY_ENTITIES = Sparkle.config.sparklyEntities.stream().map(Registries.ENTITY_TYPE::get).toList();
 	}
 
 	@Override
 	public void onUpdateClient() {
-		SPARKLY_BLOCKS = SparkleConfig.config.sparklyBlocks.stream().map(Registries.BLOCK::get).toList();
-		SPARKLY_ITEMS = SparkleConfig.config.sparklyItems.stream().map(Registries.ITEM::get).toList();
-		SPARKLY_ENTITIES = SparkleConfig.config.sparklyEntities.stream().map(Registries.ENTITY_TYPE::get).toList();
+		SPARKLY_BLOCKS = Sparkle.config.sparklyBlocks.stream().map(Registries.BLOCK::get).toList();
+		SPARKLY_ITEMS = Sparkle.config.sparklyItems.stream().map(Registries.ITEM::get).toList();
+		SPARKLY_ENTITIES = Sparkle.config.sparklyEntities.stream().map(Registries.ENTITY_TYPE::get).toList();
 	}
 }
